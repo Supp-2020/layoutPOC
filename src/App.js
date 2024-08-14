@@ -27,10 +27,16 @@ const HorizontalCompactLayout = () => {
     console.log("Updated Layout:", newLayout);  // Log the updated layout
   };
 
+  const handleReset = () => {
+    localStorage.removeItem("saved")
+    window.location.assign("/")
+  }
+
   return (
     <div>
       <button onClick={() => setCompactType("vertical")}>{"vertical"}</button>
       <button onClick={() => setCompactType("horizontal")}>{"horizontal"}</button>
+      <button onClick={() => handleReset()}>{"reset"}</button>
       <h2>{compactType} Compaction Example</h2>
       <GridLayout
         className="layout"
