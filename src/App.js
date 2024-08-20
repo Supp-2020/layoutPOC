@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import GridLayout from "react-grid-layout";
+import "./App.css";
 // import { Responsive, WidthProvider } from "react-grid-layout";
 // const ResponsiveGridLayout = WidthProvider(Responsive);
 import "react-grid-layout/css/styles.css";
@@ -41,12 +42,25 @@ const HorizontalCompactLayout = () => {
 
   return (
     <div>
-      <button style={{marginLeft: "10px", marginTop: "10px"}} onClick={() => setCompactType("vertical")}>{"vertical"}</button>
-      <button style={{marginLeft: "10px", marginTop: "10px"}} onClick={() => setCompactType("horizontal")}>
+      <button
+        style={{ marginLeft: "10px", marginTop: "10px" }}
+        onClick={() => setCompactType("vertical")}
+      >
+        {"vertical"}
+      </button>
+      <button
+        style={{ marginLeft: "10px", marginTop: "10px" }}
+        onClick={() => setCompactType("horizontal")}
+      >
         {"horizontal"}
       </button>
-      <button style={{marginLeft: "10px", marginTop: "10px"}} onClick={() => handleReset()}>{"reset"}</button>
-      <h2 style={{marginLeft: "10px"}}>{compactType} Compaction Example</h2>
+      <button
+        style={{ marginLeft: "10px", marginTop: "10px" }}
+        onClick={() => handleReset()}
+      >
+        {"reset"}
+      </button>
+      <h2 style={{ marginLeft: "10px" }}>{compactType} Compaction Example</h2>
       <div>
         <GridLayout
           className="layout"
@@ -59,36 +73,46 @@ const HorizontalCompactLayout = () => {
           autoSize={true}
           resizeHandles={["s", "e", "n", "w"]}
         >
-          <div key="a" style={{ border: "1px solid black" }}>
-            Item A
+          <div key="a" className="card">
+            <div className="card-widget">Widget 1</div>
+            <div className="cart-title">Request for Quotes</div>
           </div>
-          <div key="b" style={{ border: "1px solid black" }}>
-            Item B
+          <div key="b" className="card">
+            <div className="card-widget">Widget 2</div>
+            <div className="cart-title">All Carts</div>
           </div>
-          <div key="c" style={{ border: "1px solid black" }}>
-            Item C
+          <div key="c" className="card">
+            <div className="card-widget">Widget 3</div>
+            <div className="cart-title">Available Quotes</div>
           </div>
-          <div key="d" style={{ border: "1px solid black" }}>
-            Item D
+          <div key="d" className="card">
+            <div className="card-widget">Widget 4</div>
+            <div className="cart-title">Renewal Quotes</div>
           </div>
-          <div key="e" style={{ border: "1px solid black" }}>
-            Item E
+          <div key="e" className="card">
+            <div className="card-widget">Widget 5</div>
+            <div className="cart-title">All Orders</div>
           </div>
-          <div key="f" style={{ border: "1px solid black" }}>
-            Item f
+          <div key="f" className="card">
+            <div className="card-widget">Widget 6</div>
+            <div className="cart-title">Shipment and Deliveries</div>
           </div>
-          <div key="g" style={{ border: "1px solid black" }}>
-            Item g
+          <div key="g" className="card">
+            <div className="card-widget">Widget 7</div>
+            <div className="cart-title">Manage Subscriptions</div>
           </div>
-          <div key="h" style={{ border: "1px solid black" }}>
-            Item h
+          <div key="h" className="card">
+            <div className="card-widget">Widget 8</div>
+            <div className="cart-title">Catalogue</div>
           </div>
         </GridLayout>
       </div>
-      <button style={{marginLeft: "30px"}} onClick={() => handleSubmit()}>{"Submit"}</button>
+      <button style={{ marginLeft: "30px" }} onClick={() => handleSubmit()}>
+        {"Submit"}
+      </button>
       {submitLayout?.length ? (
         <div>
-          <h2 style={{marginLeft: "10px"}}>Preview of Layout</h2>
+          <h2 style={{ marginLeft: "10px" }}>Preview of Layout</h2>
           <GridLayout
             className="layout"
             layout={submitLayout}
@@ -98,29 +122,37 @@ const HorizontalCompactLayout = () => {
             isDraggable={false}
             isResizable={false}
           >
-            <div key="a" style={{ border: "1px solid black" }}>
-              Item A
+            <div key="a" className="card">
+              <div className="card-widget">Widget 1</div>
+              <div className="cart-title">Request for Quotes</div>
             </div>
-            <div key="b" style={{ border: "1px solid black" }}>
-              Item B
+            <div key="b" className="card">
+              <div className="card-widget">Widget 2</div>
+              <div className="cart-title">All Carts</div>
             </div>
-            <div key="c" style={{ border: "1px solid black" }}>
-              Item C
+            <div key="c" className="card">
+              <div className="card-widget">Widget 3</div>
+              <div className="cart-title">Available Quotes</div>
             </div>
-            <div key="d" style={{ border: "1px solid black" }}>
-              Item D
+            <div key="d" className="card">
+              <div className="card-widget">Widget 4</div>
+              <div className="cart-title">Renewal Quotes</div>
             </div>
-            <div key="e" style={{ border: "1px solid black" }}>
-              Item E
+            <div key="e" className="card">
+              <div className="card-widget">Widget 5</div>
+              <div className="cart-title">All Orders</div>
             </div>
-            <div key="f" style={{ border: "1px solid black" }}>
-              Item f
+            <div key="f" className="card">
+              <div className="card-widget">Widget 6</div>
+              <div className="cart-title">Shipment and Deliveries</div>
             </div>
-            <div key="g" style={{ border: "1px solid black" }}>
-              Item g
+            <div key="g" className="card">
+              <div className="card-widget">Widget 7</div>
+              <div className="cart-title">Manage Subscriptions</div>
             </div>
-            <div key="h" style={{ border: "1px solid black" }}>
-              Item h
+            <div key="h" className="card">
+              <div className="card-widget">Widget 8</div>
+              <div className="cart-title">Catalogue</div>
             </div>
           </GridLayout>
         </div>

@@ -41,3 +41,22 @@
   }
 }
 
+
+.card {
+  display: flex;
+  border: 1px solid black;
+}
+
+.cart-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.card-widget {
+  position: absolute;
+  padding: 5px;
+}
+
+
