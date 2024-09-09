@@ -5,19 +5,31 @@ import "./App.css";
 // const ResponsiveGridLayout = WidthProvider(Responsive);
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
-let intiallayout = [
-  { w: 4, h: 4, x: 0, y: 0, i: "a", moved: false, static: false },
-  { w: 4, h: 4, x: 4, y: 0, i: "b", moved: false, static: false },
-  { w: 4, h: 4, x: 8, y: 0, i: "c", moved: false, static: false },
-  { w: 4, h: 4, x: 0, y: 4, i: "d", moved: false, static: false },
-  { w: 4, h: 4, x: 4, y: 4, i: "e", moved: false, static: false },
-  { w: 4, h: 4, x: 8, y: 4, i: "f", moved: false, static: false },
-  { w: 4, h: 4, x: 0, y: 8, i: "g", moved: false, static: false },
-  { w: 4, h: 4, x: 4, y: 8, i: "h", moved: false, static: false },
-];
+/* let intiallayout = [
+  { w: 4, h: 4, x: 0, y: 0, i: "a", moved: false, static: false},
+  { w: 4, h: 4, x: 4, y: 0, i: "b", moved: false, static: false},
+  { w: 4, h: 4, x: 8, y: 0, i: "c", moved: false, static: false},
+  { w: 4, h: 4, x: 0, y: 4, i: "d", moved: false, static: false},
+  { w: 4, h: 4, x: 4, y: 4, i: "e", moved: false, static: false},
+  { w: 4, h: 4, x: 8, y: 4, i: "f", moved: false, static: false},
+  { w: 4, h: 4, x: 0, y: 8, i: "g", moved: false, static: false},
+  { w: 4, h: 4, x: 4, y: 8, i: "h", moved: false, static: false},
+]; */
+
 
 const HorizontalCompactLayout = () => {
   const ls = localStorage.getItem("saved");
+
+  let intiallayout = [
+    { w: 4, h: 4, x: 0, y: 0, i: "a", moved: false, static: false, minW: 4, maxW: 8,minH: 4, maxH: 12},
+    { w: 4, h: 4, x: 4, y: 0, i: "b", moved: false, static: false, minW: 4, maxW: 8,minH: 4, maxH: 12 },
+    { w: 4, h: 4, x: 8, y: 0, i: "c", moved: false, static: false, minW: 4, maxW: 8 ,minH: 4, maxH: 12},
+    { w: 4, h: 4, x: 0, y: 4, i: "d", moved: false, static: false, minW: 4, maxW: 8 ,minH: 4, maxH: 12},
+    { w: 4, h: 4, x: 4, y: 4, i: "e", moved: false, static: false, minW: 4, maxW: 8 ,minH: 4, maxH: 12},
+    { w: 4, h: 4, x: 8, y: 4, i: "f", moved: false, static: false, minW: 4, maxW: 8,minH: 4, maxH: 12 },
+    { w: 4, h: 4, x: 0, y: 8, i: "g", moved: false, static: false, minW: 4, maxW: 8 ,minH: 4, maxH:12},
+    { w: 4, h: 4, x: 4, y: 8, i: "h", moved: false, static: false, minW: 4, maxW: 8 ,minH: 4, maxH: 12},
+  ];
   if (ls) {
     intiallayout = JSON.parse(ls);
   }
@@ -28,7 +40,7 @@ const HorizontalCompactLayout = () => {
   const handleLayoutChange = (newLayout) => {
     setLayout(newLayout); // Update the layout state with new positions
     localStorage.setItem("saved", JSON.stringify(newLayout));
-    console.log("Updated Layout:", newLayout); // Log the updated layout
+    // console.log("Updated Layout:", newLayout); // Log the updated layout
   };
 
   const handleReset = () => {
