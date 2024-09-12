@@ -5,14 +5,14 @@ import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
 
 let initialLayout = {
-  w: 4,
-  h: 4,
+  w: 3,
+  h: 3,
   x: 0,
   y: 0,
-  minW: 4,
-  maxW: 8,
-  minH: 4,
-  maxH: 8,
+  minW: 3,
+  maxW: 6,
+  minH: 3,
+  maxH: 6,
 };
 
 const textData = [
@@ -45,12 +45,22 @@ const HorizontalCompactLayout = () => {
   const handleLayoutChange = (newLayout) => {
     const updatedItems = newLayout.map((layoutItem, index) => {
       const currentItem = droppedItems[index];
-      
+    
+      const alignedY = Math.round(layoutItem.y / 3) * 3;
+      const alignedX = Math.round(layoutItem.x / 3) * 3;
+    
+      const alignedWidth = Math.max(Math.round(layoutItem.w / 3) * 3, 3);
+      const alignedHeight = Math.max(Math.round(layoutItem.h / 3) * 3, 3);
+
       return {
         ...currentItem,
         ...layoutItem,
+        x: alignedX,
+        y: alignedY,
+        w: alignedWidth,
+        h: alignedHeight,
       };
-    });
+    });    
 
     setDroppedItems(updatedItems);
     setLayout(newLayout);
@@ -91,13 +101,13 @@ const HorizontalCompactLayout = () => {
 
   const handleDragOver = (e) => {
     e.preventDefault();
-    setTimeout(() => {
+/*     setTimeout(() => {
       if(compactType === "horizontal"){
         setCompactType("vertical")
       } else {
         setCompactType("horizontal")
       }
-    },800)
+    },800) */
   };
 
   return (
